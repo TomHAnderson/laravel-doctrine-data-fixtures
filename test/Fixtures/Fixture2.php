@@ -1,23 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiSkeletonsTest\Laravel\Doctrine\DataFixtures\Fixtures;
 
-use Doctrine\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\FixtureInterface;
 use ApiSkeletonsTest\Laravel\Doctrine\DataFixtures\Entity\Fixture2 as Fixture2Entity;
+use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Persistence\ObjectManager;
 
 class Fixture2 implements
     FixtureInterface
 {
-    const GUEST_ID = 4;
-    const USER_ID = 5;
-    const ADMIN_ID = 6;
+    public const GUEST_ID = 4;
+    public const USER_ID  = 5;
+    public const ADMIN_ID = 6;
 
-    const GUEST = 'guest2';
-    const USER = 'user2';
-    const ADMIN = 'admin2';
+    public const GUEST = 'guest2';
+    public const USER  = 'user2';
+    public const ADMIN = 'admin2';
 
-    public function load(ObjectManager $objectManager)
+    public function load(ObjectManager $manager): void
     {
         $data = [
             [
@@ -35,7 +37,7 @@ class Fixture2 implements
         ];
 
         foreach ($data as $row) {
-            $entity = $objectManager
+            $entity = $manager
                 ->getRepository(Fixture2Entity::class)
                 ->find($row['id']);
 
@@ -43,14 +45,13 @@ class Fixture2 implements
                 $entity = new Fixture2Entity();
 
                 $entity->setId($row['id']);
-                $objectManager->persist($entity);
+                $manager->persist($entity);
             }
 
             $entity
-                ->setName($row['name'])
-            ;
+                ->setName($row['name']);
 
-            $objectManager->flush();
+            $manager->flush();
         }
     }
 }

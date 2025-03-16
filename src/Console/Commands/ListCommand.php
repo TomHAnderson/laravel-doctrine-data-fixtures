@@ -6,6 +6,7 @@ namespace ApiSkeletons\Laravel\Doctrine\DataFixtures\Console\Commands;
 
 use Illuminate\Console\Command;
 
+use function array_keys;
 use function config;
 
 class ListCommand extends Command
@@ -41,7 +42,7 @@ class ListCommand extends Command
         }
 
         if (! $this->argument('group')) {
-            foreach ($this->config as $groupName => $groupConfig) {
+            foreach (array_keys($this->config) as $groupName) {
                 $this->info($groupName);
             }
 

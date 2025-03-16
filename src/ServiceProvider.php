@@ -7,6 +7,7 @@ namespace ApiSkeletons\Laravel\Doctrine\DataFixtures;
 use ApiSkeletons\Laravel\Doctrine\DataFixtures\Console\Commands\ImportCommand;
 use ApiSkeletons\Laravel\Doctrine\DataFixtures\Console\Commands\ListCommand;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
+use Override;
 
 use function config_path;
 
@@ -15,6 +16,7 @@ class ServiceProvider extends LaravelServiceProvider
     /**
      * Register any application services.
      */
+    #[Override]
     public function register(): void
     {
     }
