@@ -62,7 +62,7 @@ jobs:
           composer-options: "--prefer-dist --no-suggest --ignore-platform-req=php"
 
       - name: "Run PHPUnit"
-        run: "vendor/bin/phpunit --coverage-clover=coverage.xml"
+        run: "vendor/bin/phpunit --coverage-clover=coverage.xml --config=phpunit.xml.dist"
 
       - name: "Upload coverage file"
         uses: "actions/upload-artifact@v4"
