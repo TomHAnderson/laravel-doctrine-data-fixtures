@@ -3,17 +3,16 @@
     "description": "Doctrine Data Fixtures for Laravel",
     "type": "library",
     "require": {
-        "php": "^8.0",
-        "doctrine/data-fixtures": "^1.5",
-        "laravel/framework": "^8.82 || ^9.0 || ^10.0 || ^11.0"
+        "php": "^8.3",
+        "doctrine/data-fixtures": "^2.0",
+        "laravel/framework": "^12.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "doctrine/coding-standard": "^9",
-        "doctrine/dbal": "^2.13",
-        "laravel-doctrine/orm": "^1.7",
-        "orchestra/testbench": "^6.24",
-        "vimeo/psalm": "^4.20 || ^5.0"
+        "doctrine/coding-standard": "^12.0",
+        "doctrine/dbal": "^4.0",
+        "laravel-doctrine/orm": "^3.1",
+        "orchestra/testbench": "^10.1",
+        "vimeo/psalm": "^6.8"
     },
     "license": "MIT",
     "autoload": {
