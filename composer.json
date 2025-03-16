@@ -3,7 +3,7 @@
     "description": "Doctrine Data Fixtures for Laravel",
     "type": "library",
     "require": {
-        "php": "^8.3",
+        "php": "^8.4",
         "doctrine/data-fixtures": "^2.0",
         "laravel/framework": "^12.0"
     },

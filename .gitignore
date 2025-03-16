@@ -4,3 +4,4 @@
 /.phpcs-cache
 /.phpunit.cache/
 /coverage/
+.phpunit.result.cache
