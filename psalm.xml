@@ -12,4 +12,9 @@
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
+    <issueHandlers>
+        <InvalidCast errorLevel="suppress" />
+        <PossiblyUnusedMethod errorLevel="suppress" />
+        <UnusedClass errorLevel="suppress" />
+    </issueHandlers>
 </psalm>
