@@ -55,14 +55,14 @@ jobs:
           composer-options: "--prefer-dist --no-suggest"
 
       - name: "Install dependencies with Composer (--ignore-platform-req=php)"
-        uses: "ramsey/composer-install@v1"
+        uses: "ramsey/composer-install@v3"
         if: "startsWith(matrix.php-version, '8')"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "--prefer-dist --no-suggest --ignore-platform-req=php"
 
       - name: "Run PHPUnit"
-        run: "vendor/bin/phpunit --coverage-clover=coverage.xml --config=phpunit.xml.dist"
+        run: "vendor/bin/phpunit --coverage-clover=coverage.xml --config=./phpunit.xml.dist"
 
       - name: "Upload coverage file"
         uses: "actions/upload-artifact@v4"
